@@ -794,3 +794,14 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 });
+
+// Плавная загрузка изображений
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.portfolio__image img');
+  
+  images.forEach(img => {
+    img.addEventListener('load', function() {
+      this.classList.add('loaded');
+    });
+  });
+});
