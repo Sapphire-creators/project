@@ -102,6 +102,10 @@
   border-radius: 12px;
   margin: 1rem;
   position: relative;
+  /* Добавляем оптимизацию загрузки */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .portfolio__image img {
@@ -110,6 +114,11 @@
   object-fit: cover;
   transition: transform 0.5s ease;
   filter: grayscale(80%);
+  /* Добавляем lazy loading и оптимизацию */
+  loading: lazy;
+  object-fit: cover;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .portfolio__item:hover .portfolio__image img {
