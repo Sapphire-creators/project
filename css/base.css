@@ -215,8 +215,13 @@ button {
 }
 
 .footer__bottom p {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9) !important; /* Добавляем приоритет */
+}
+
+.footer__logo {
+  font-size: 1.5rem;
+  color: #00f2fe !important; /* Делаем цвет логотипа заметным */
+  margin-bottom: 1rem;
 }
 
 /* Медиа-запросы для базовых элементов */

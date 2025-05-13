@@ -9,50 +9,66 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <style>
-    body {
-      transform-style: preserve-3d;
-      perspective: 1000px;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
-  <!-- Навигация -->
-  <nav class="navbar">
-    <div class="navbar__container">
-      <a href="index.html" class="navbar__logo">Sapphire</a>
-      <div class="navbar__links">
-        <a href="index.html" class="active">Главная</a>
-        <a href="portfolio.html">Портфолио</a>
-        <a href="team.html">Команда</a>
-        <a href="contact.html">Контакты</a>
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="#">Sapphire</a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <div class="hori-selector">
+                  <div class="left"></div>
+                  <div class="right"></div>
+              </div>
+              <li class="nav-item active">
+                  <a class="nav-link" href="index.html"><i class="fas fa-home"></i>Главная</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html"><i class="fas fa-briefcase"></i>Портфолио</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="team.html"><i class="fas fa-users"></i>Команда</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i>Контакты</a>
+              </li>
+          </ul>
       </div>
-    </div>
   </nav>
 
   <!-- Главная секция -->
   <section class="home">
     <div class="home__hero">
-      <h1 class="home__title">Создаем Инновационные Цифровые Решения</h1>
-      <p class="home__subtitle">Креативный Дизайн • Современная Разработка • Профессиональный Монтаж</p>
-
-      <div class="home__services">
-        <div class="home__service">
-          <h3>Дизайн</h3>
-          <p>UI/UX дизайн, брендинг, графика</p>
-        </div>
-        
-        <div class="home__service">
-          <h3>Разработка</h3>
-          <p>Веб-сайты, приложения, системы</p>
-        </div>
-        
-        <div class="home__service">
-          <h3>Монтаж</h3>
-          <p>Видео, анимация, эффекты</p>
-        </div>
+      <h1 class="home__title">Инновационные Цифровые Решения</h1>
+      <p class="home__subtitle">Создаем будущее через дизайн • разработку • креатив</p>
+      
+      <div class="home__cta">
+        <a href="portfolio.html" class="btn btn-primary">Наши работы</a>
+        <a href="contact.html" class="btn btn-outline">Связаться</a>
       </div>
     </div>
+    
+    <div class="home__services">
+      <div class="home__service">
+        <h3>Дизайн</h3>
+        <p>UI/UX дизайн, брендинг, графика</p>
+      </div>
+      
+      <div class="home__service">
+        <h3>Разработка</h3>
+        <p>Веб-сайты, приложения, системы</p>
+      </div>
+      
+      <div class="home__service">
+        <h3>Монтаж</h3>
+        <p>Видео, анимация, эффекты</p>
+      </div>
+    </div>
+  </div>
     
     <!-- Секция о нас -->
     <div class="home__about">
@@ -147,7 +163,7 @@
         </div>
         <div class="footer__column">
           <h4>Контакты</h4>
-          <a href="mailto:info@Sapphire">wincesterdesigner2023@gmail.com</a>
+          <a href="mailto:info@Sapphire">winchesterdesigner2023@gmail.com</a>
           <a href="tel:+3591234567890">+359 (123) 456-78-90</a>
         </div>
       </div>
@@ -159,5 +175,7 @@
 
   <!-- Скрипты -->
   <script src="js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
 </html>
