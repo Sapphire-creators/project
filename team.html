@@ -4,23 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Команда - Sapphire</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
   <!-- Навигация -->
-  <nav class="navbar">
-    <div class="navbar__container">
-      <a href="index.html" class="navbar__logo">Sapphire</a>
-      <div class="navbar__links">
-        <a href="index.html">Главная</a>
-        <a href="portfolio.html">Портфолио</a>
-        <a href="team.html" class="active">Команда</a>
-        <a href="contact.html">Контакты</a>
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+      <a class="navbar-brand navbar-logo" href="index.html">Sapphire</a>
+      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars text-white"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <div class="hori-selector">
+                  <div class="left"></div>
+                  <div class="right"></div>
+              </div>
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html"><i class="fas fa-home"></i>Главная</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html"><i class="fas fa-briefcase"></i>Портфолио</a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="team.html"><i class="fas fa-users"></i>Команда</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i>Контакты</a>
+              </li>
+          </ul>
       </div>
-    </div>
   </nav>
 
   <!-- Секция команды -->
@@ -130,7 +147,7 @@
     <div class="team__cta">
       <h2>Хотите присоединиться к нашей команде?</h2>
       <p>Мы всегда ищем талантливых специалистов. Отправьте нам свое резюме!</p>
-      <a href="team.html" class="btn">Познакомиться с командой</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVd365eIyHLB4qpZRhClNL26xnubMPY9q8-RaFljqBZ1HJZw/viewform" class="btn">Отправить заявку!</a>
     </div>
   </section>
   
@@ -168,6 +185,8 @@
   </footer>
 
   <!-- Скрипты -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

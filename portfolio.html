@@ -3,24 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфолио - Sigma</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <title>Портфолио - Sapphire</title>
+  <link rel="stylesheet" href="css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- Предзагрузка критических изображений -->
+  <link rel="preload" as="image" href="assets/images/design/face.png">
+  <link rel="preload" as="image" href="assets/images/design/haerin.png">
+  <link rel="preload" as="image" href="assets/images/design/kang_naerin.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
   <!-- Навигация -->
-  <nav class="navbar">
-    <div class="navbar__container">
-      <a href="index.html" class="navbar__logo">Sapphire</a>
-      <div class="navbar__links">
-        <a href="index.html">Главная</a>
-        <a href="portfolio.html" class="active">Портфолио</a>
-        <a href="team.html">Команда</a>
-        <a href="contact.html">Контакты</a>
-      </div>
+  <nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo" href="index.html">Sapphire</a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <div class="hori-selector">
+          <div class="left"></div>
+          <div class="right"></div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="fas fa-home"></i>Главная</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="portfolio.html"><i class="fas fa-briefcase"></i>Портфолио</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="team.html"><i class="fas fa-users"></i>Команда</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class="fas fa-envelope"></i>Контакты</a>
+        </li>
+      </ul>
     </div>
   </nav>
 
@@ -32,7 +53,6 @@
     </div>
     
     <div class="portfolio__filter">
-      <button class="active" data-filter="all">Все проекты</button>
       <button data-filter="design">Дизайн</button>
       <button data-filter="development">Разработка</button>
       <button data-filter="video">Монтаж</button>
@@ -42,7 +62,25 @@
       <!-- Проект 1 -->
       <div class="portfolio__item" data-category="design">
         <div class="portfolio__image">
-          <img src="images/design/face.png" alt="face">
+          <img src="assets/images/design/face.png" 
+               alt="haerin"
+               loading="lazy"
+               decoding="async"
+               width="800"
+               height="600">
+          </div>
+        <div class="portfolio__content">
+          <div>
+            <h3>Редизайн корпоративного сайта</h3>
+            <p>Полный редизайн корпоративного сайта с фокусом на улучшение пользовательского опыта.</p>
+          </div>
+          <a href="#" class="btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="portfolio__item" data-category="design">
+        <div class="portfolio__image">
+          <img src="assets/images/design/haerin.png" alt="haerin">
         </div>
         <div class="portfolio__content">
           <div>
@@ -55,7 +93,7 @@
 
       <div class="portfolio__item" data-category="design">
         <div class="portfolio__image">
-          <img src="images/design/haerin.png" alt="haerin">
+          <img src="assets/images/design/kang_naerin.png" alt="haerin">
         </div>
         <div class="portfolio__content">
           <div>
@@ -68,20 +106,7 @@
 
       <div class="portfolio__item" data-category="design">
         <div class="portfolio__image">
-          <img src="images/design/kang_naerin.png" alt="haerin">
-        </div>
-        <div class="portfolio__content">
-          <div>
-            <h3>Редизайн корпоративного сайта</h3>
-            <p>Полный редизайн корпоративного сайта с фокусом на улучшение пользовательского опыта.</p>
-          </div>
-          <a href="#" class="btn">Подробнее</a>
-        </div>
-      </div>
-
-      <div class="portfolio__item" data-category="design">
-        <div class="portfolio__image">
-          <img src="images/design/look.png" alt="haerin">
+          <img src="assets/images/design/look.png" alt="haerin">
         </div>
         <div class="portfolio__content">
           <div>
@@ -94,7 +119,7 @@
       
       <div class="portfolio__item" data-category="design">
         <div class="portfolio__image">
-          <img src="images/design/take.png" alt="haerin">
+          <img src="assets/images/design/take.png" alt="haerin">
         </div>
         <div class="portfolio__content">
           <div>
@@ -107,7 +132,7 @@
             <!-- Проект 4 -->
       <div class="portfolio__item" data-category="design">
         <div class="portfolio__image">
-          <img src="images/design/stay.png" alt="Редизайн корпоративного сайта">
+          <img src="assets/images/design/stay.png" alt="Редизайн корпоративного сайта">
         </div>
         <div class="portfolio__content">
           <h3>Редизайн корпоративного сайта</h3>
@@ -115,9 +140,9 @@
         </div>
       </div>
 
-      <div class="portfolio__item" data-category="development">
+      <div class="portfolio__item" data-category="maps">
         <div class="portfolio__image">
-          <img src="images/design/fmap.png" alt="fmap">
+          <img src="assets/images/maps/fmap.png" alt="fmap">
         </div>
         <div class="portfolio__content">
           <h3>Карта фэнтези-эпохи</h3>
@@ -125,9 +150,9 @@
         </div>
       </div>
 
-      <div class="portfolio__item" data-category="development">
+      <div class="portfolio__item" data-category="maps">
         <div class="portfolio__image">
-          <img src="images/design/v1.jpg" alt="v1">
+          <img src="assets/images/design/v1.jpg" alt="v1">
         </div>
         <div class="portfolio__content">
           <h3>Главная сторона визитки</h3>
@@ -135,9 +160,9 @@
         </div>
       </div>
 
-      <div class="portfolio__item" data-category="development">
+      <div class="portfolio__item" data-category="maps">
         <div class="portfolio__image">
-          <img src="images/design/v2.jpg" alt="v2">
+          <img src="assets/images/design/v2.jpg" alt="v2">
         </div>
         <div class="portfolio__content">
           <h3>Обратная сторона визитки</h3>
@@ -148,38 +173,64 @@
       <!-- Проект 2 -->
       <div class="portfolio__item" data-category="development">
         <div class="portfolio__image">
-          <img src="images/dev/Lyriks.png" alt="Lyriks">
+          <img src="assets/images/dev/Lyriks.png" alt="Lyriks">
         </div>
         <div class="portfolio__content">
-          <h3>Bеб-сайт для просушивания музыки</h3>
-          <p>Pазработка веб-сайт для прослушивания музыки</p>
+          <h3>Bеб-сайт для прослушивания музыки</h3>
+          <a href="https://lyriks-music-platform.netlify.app/" class="btn" target="_blank" rel="noopener noreferrer">Переадресация на сайт</a>
         </div>
       </div>
       
       <div class="portfolio__item" data-category="development">
         <div class="portfolio__image">
-          <img src="images/dev/PlumeSalon.png" alt="Веб-платформа для образования">
+          <img src="assets/images/dev/fastfood.png" alt="Веб-платформа для образования">
         </div>
         <div class="portfolio__content">
           <h3>Landing для бургерной</h3>
-          <p>Разработка landing для бургерной.</p>
+          <p>Разработка лендинга для бургерной</p>
+          <a href="https://egordawuw3.github.io/BurgerLanding/" class="btn" target="_blank" rel="noopener noreferrer">Переадресация на сайт</a>
         </div>
       </div>
 
       <div class="portfolio__item" data-category="development">
         <div class="portfolio__image">
-          <img src="images/dev/ZeniX.png" alt="Веб-платформа для образования">
+          <img src="assets/images/dev/PlumeSalon.png" alt="Веб-платформа для образования">
+        </div>
+        <div class="portfolio__content">
+          <h3>Веб-сайт для салона красоты</h3>
+          <p>Разработка веб-сайта для салона красоты</p>
+          <a href="https://egordawuw3.github.io/PlumeSalon/" class="btn" target="_blank" rel="noopener noreferrer">Переадресация на сайт</a>
+        </div>
+      </div>
+
+      <div class="portfolio__item" data-category="development">
+        <div class="portfolio__image">
+          <img src="assets/images/dev/ZeniX.png" alt="Веб-платформа для образования">
         </div>
         <div class="portfolio__content">
           <h3>Landing для чита</h3>
           <p>Разработка landing для чита.</p>
+          <a href="https://zenixpro.github.io/z/" class="btn" target="_blank" rel="noopener noreferrer">Переадресация на сайт</a>
+        </div>
+      </div>
+
+
+
+      <div class="portfolio__item" data-category="development">
+        <div class="portfolio__image">
+          <img src="assets/images/dev/shopsy.png" alt="Веб-платформа для образования">
+        </div>
+        <div class="portfolio__content">
+          <h3>Интернет-магазин</h3>
+          <p>Pазработкa интернет-магазина</p>
+          <a href="https://shopsy-ten-gold.vercel.app/" class="btn" target="_blank" rel="noopener noreferrer">Переадресация на сайт</a>
         </div>
       </div>
       
       <!-- Проект 6 -->
       <div class="portfolio__item" data-category="video">
         <div class="portfolio__image" data-video="1lzjmxmbwE5ZItkZ3QEoaWIgfQqkn9M0Z">
-        <img src="images/montage/fastfood.png" alt="Реклама фастфуда">
+        <img src="assets/images/montage/fastfood.png" alt="Реклама фастфуда">
         </div>
         <div class="portfolio__content">
           <h3>Реклама фастфуда</h3>
@@ -188,10 +239,13 @@
       </div>
 
 
+      
+
+
           <!-- Проект 6 -->
       <div class="portfolio__item" data-category="video">
         <div class="portfolio__image" data-video="1Ilmbd5Z05fFkMQ2Y_vqGMxOk_Nw-vdmx">
-          <img src="images/montage/shoes.png" alt="Реклама кроссовок">
+          <img src="assets/images/montage/shoes.png" alt="Реклама кроссовок">
           </div>
           <div class="portfolio__content">
               <h3>Реклама кроссовок</h3>
@@ -202,7 +256,7 @@
 
           <div class="portfolio__item" data-category="video">
             <div class="portfolio__image" data-video="1ieaC-93mMWuSbdJD8PXt-bz7-t65M-OI">
-              <img src="images/montage/dubai.png" alt="Дубай">
+              <img src="assets/images/montage/dubai.png" alt="Дубай">
               </div>
               <div class="portfolio__content">
                   <h3>Видео о Дубае</h3>
@@ -212,7 +266,7 @@
 
             <div class="portfolio__item" data-category="video">
               <div class="portfolio__image" data-video="1quUgviB4ZmQrF2kXji30-b6NM10fuh1p">
-                <img src="images/montage/github.png" alt="гитхаб">
+                <img src="assets/images/montage/github.png" alt="гитхаб">
                 </div>
                 <div class="portfolio__content">
                     <h3>Github видео</h3>
@@ -261,70 +315,138 @@
   </footer>
 
   <!-- Видео плеер -->
-  <!-- Update video player div -->
   <div class="video-player">
     <div class="video-player__close">×</div>
     <iframe id="drive-player" frameborder="0" allowfullscreen></iframe>
   </div>
-  
-  <!-- Replace YouTube script with Google Drive implementation -->
+
+  <!-- Модальное окно для изображений -->
+  <div class="image-modal">
+    <div class="image-modal__close">×</div>
+    <img id="modal-image" src="" alt="">
+  </div>
+
   <script>
+    // Обработчик для видео
     document.querySelectorAll('[data-category="video"] .portfolio__image').forEach(item => {
       item.addEventListener('click', function() {
         const videoId = this.dataset.video;
         const player = document.querySelector('.video-player');
         const iframe = document.getElementById('drive-player');
         
-        // Update Google Drive embed URL
         iframe.src = `https://drive.google.com/file/d/${videoId}/preview`;
         player.classList.add('active');
+        document.body.style.overflow = 'hidden';
       });
     });
-  
+
+    // Обработчик для изображений (все категории кроме видео)
+    document.querySelectorAll('.portfolio__item:not([data-category="video"]) .portfolio__image').forEach(item => {
+      item.addEventListener('click', function() {
+        const imgSrc = this.querySelector('img').src;
+        const modal = document.querySelector('.image-modal');
+        const modalImg = document.getElementById('modal-image');
+        
+        modalImg.src = imgSrc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Закрытие видеоплеера
     document.querySelector('.video-player__close').addEventListener('click', function() {
       const player = document.querySelector('.video-player');
       const iframe = document.getElementById('drive-player');
-      iframe.src = ''; // Clear source
+      iframe.src = '';
       player.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Закрытие модального окна с изображением
+    document.querySelector('.image-modal__close').addEventListener('click', function() {
+      const modal = document.querySelector('.image-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    // Закрытие по клику вне контента
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('video-player')) {
+        const player = document.querySelector('.video-player');
+        const iframe = document.getElementById('drive-player');
+        iframe.src = '';
+        player.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      if (e.target.classList.contains('image-modal')) {
+        const modal = document.querySelector('.image-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Закрытие по клавише Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const player = document.querySelector('.video-player');
+        const modal = document.querySelector('.image-modal');
+        const iframe = document.getElementById('drive-player');
+        
+        if (player.classList.contains('active')) {
+          iframe.src = '';
+          player.classList.remove('active');
+        }
+        if (modal.classList.contains('active')) {
+          modal.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+      }
     });
   </script>
   <!-- Скрипты -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    let youtubePlayer;
-    function onYouTubeIframeAPIReady() {
-      youtubePlayer = new YT.Player('youtube-player', {
-        width: '100%',
-        height: '100%',
-        videoId: '',
-        playerVars: {
-          autoplay: 1,
-          controls: 1,
-          modestbranding: 1,
-          rel: 0
-        }
-      });
-    }
-
-    document.querySelectorAll('[data-category="video"] .portfolio__image').forEach(item => {
-      item.addEventListener('click', function() {
-        const videoId = this.dataset.video;
-        const player = document.querySelector('.video-player');
-        
-        if (youtubePlayer && youtubePlayer.loadVideoById) {
-          youtubePlayer.loadVideoById(videoId);
-          player.classList.add('active');
-        }
-      });
-    });
-
-    document.querySelector('.video-player__close').addEventListener('click', function() {
-      const player = document.querySelector('.video-player');
-      if (youtubePlayer && youtubePlayer.stopVideo) {
-        youtubePlayer.stopVideo();
-      }
-      player.classList.remove('active');
-    });
-  </script>
+  <script src="js/pages/portfolio.js"></script>
 </body>
 </html>
+
+<script>
+  // Функция для фильтрации проектов
+  function filterProjects(category) {
+    const items = document.querySelectorAll('.portfolio__item');
+    items.forEach(item => {
+      if (category === 'all' || item.dataset.category === category || (category === 'design' && item.dataset.category === 'maps')) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // При загрузке страницы
+  document.addEventListener('DOMContentLoaded', function() {
+    // Находим все кнопки фильтра
+    const filterButtons = document.querySelectorAll('.portfolio__filter button');
+    
+    // Убираем класс active у всех кнопок
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    
+    // Находим кнопку "Дизайн" и делаем её активной
+    const designButton = document.querySelector('[data-filter="design"]');
+    designButton.classList.add('active');
+    
+    // Применяем фильтр для категории "Дизайн"
+    filterProjects('design');
+    
+    // Добавляем обработчики для кнопок фильтрации
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.getAttribute('data-filter');
+        filterProjects(filter);
+      });
+    });
+  });
+</script>
