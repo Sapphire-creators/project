@@ -1,0 +1,500 @@
+/* skills.css */
+
+/* Hero section for skills page */
+.hero {
+    padding: 80px 60px 50px;
+    background: linear-gradient(135deg, #1a183f, #100c29);
+    color: #fff; /* Общий цвет текста для hero-секции, если нет специфичного */
+    margin-bottom: 80px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    color: var(--secondary-color); /* Акцентный цвет для заголовка hero */
+    text-shadow: 0 0 20px rgba(138, 180, 248, 0.4);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.hero-content p {
+    font-size: 1.35rem;
+    color: var(--text-light); /* Светлый текст для описания hero */
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Skills Section Styling */
+.skills-section {
+    padding: 0 60px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tab Navigation */
+.skills-tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 60px;
+    background-color: var(--dark-bg); /* Темный фон контейнера вкладок */
+    border-radius: 18px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Стили для неактивных вкладок (по умолчанию) */
+.skills-tab {
+    background-color: transparent; /* Прозрачный фон по умолчанию */
+    border: none;
+    color: var(--text-light); /* Текст для неактивных вкладок - должен быть виден на dark-bg */
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.skills-tab i[data-lucide] {
+    width: 22px;
+    height: 22px;
+    color: var(--text-light); /* Иконка для неактивных вкладок */
+    transition: color 0.3s ease;
+}
+
+/* Стили при наведении на неактивную вкладку */
+.skills-tab:hover {
+    background-color: rgba(255, 255, 255, 0.08); /* Слегка светлый фон при наведении */
+    color: var(--primary-color); /* Акцентный цвет для текста при наведении */
+    transform: translateY(-2px);
+}
+
+.skills-tab:hover i[data-lucide] {
+    color: var(--primary-color); /* Акцентный цвет для иконки при наведении */
+}
+
+/* Стили для активной вкладки */
+.skills-tab.active {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); /* Градиентный фон активной вкладки */
+    color: #000000; /* !!! ЧИСТО БЕЛЫЙ ТЕКСТ ДЛЯ АКТИВНОЙ ВКЛАДКИ !!! */
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4);
+    transform: translateY(0);
+}
+
+.skills-tab.active i[data-lucide] {
+    color: #ffffff; /* !!! ЧИСТО БЕЛАЯ ИКОНКА ДЛЯ АКТИВНОЙ ВКЛАДКИ !!! */
+}
+
+/* Common style for content sections */
+.skills-content {
+    display: none; /* Скрыто по умолчанию */
+    background-color: var(--light-bg); /* Светлый фон для содержимого вкладок */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-top: 30px;
+}
+
+.skills-content.active {
+    display: block; /* Показывается, когда активно */
+    animation: fadeIn 0.5s ease-out forwards; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Skill Bars */
+.skill-categories h3 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.skill-categories h3:not(:first-child) {
+    margin-top: 60px;
+}
+
+.skill-categories h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    color: var(--text-medium);
+}
+
+.skill-item span:first-child {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.skill-bar-outer {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    height: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar-inner {
+    height: 100%;
+    border-radius: 8px;
+    width: 0;
+    transition: width 1.5s ease-out;
+}
+
+.skill-percentage {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+/* Tools Grid Styling */
+.tools-section {
+    padding: 0 60px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tools-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.pretty-bg {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+}
+
+.tools-category {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(108,99,255,0.08);
+    padding: 32px 28px 28px 28px;
+    min-width: 320px;
+    flex: 1 1 320px;
+    max-width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    margin-bottom: 20px;
+    border: 1.5px solid #eaeaff;
+}
+
+.tools-category:hover {
+    box-shadow: 0 16px 40px rgba(108,99,255,0.16);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.tools-category h3 {
+    font-size: 1.7rem;
+    color: #6c63ff;
+    margin-bottom: 18px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tools-icon {
+    font-size: 1.7em;
+    vertical-align: middle;
+}
+
+.tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.tool-item {
+    background: linear-gradient(90deg, #f5f7ff 60%, #eaeaff 100%);
+    border-radius: 12px;
+    padding: 18px 0;
+    text-align: center;
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: #1e1a40;
+    box-shadow: 0 2px 8px rgba(108,99,255,0.06);
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s, color 0.18s;
+    cursor: default;
+    letter-spacing: 0.01em;
+    border: 1px solid #eaeaff;
+}
+
+.tool-item:hover {
+    background: linear-gradient(90deg, #eaeaff 0%, #f5f7ff 100%);
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 6px 18px #8ab4f822;
+    color: #6c63ff;
+}
+
+.tools-categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 36px;
+    margin-top: 30px;
+}
+
+.tools-category-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    padding: 32px 24px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, transform 0.2s;
+    border: none;
+    position: relative;
+}
+
+.tools-category-card:hover {
+    box-shadow: 0 16px 32px rgba(108,99,255,0.13);
+    transform: translateY(-4px) scale(1.03);
+}
+
+.tools-category-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    background: #f5f7ff;
+}
+
+.tools-category-card h3 {
+    font-size: 1.18rem;
+    color: #6c63ff;
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.01em;
+}
+
+.tools-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+}
+
+.tools-list li {
+    background: #f7f8ff;
+    border-radius: 10px;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #1e1a40;
+    box-shadow: 0 2px 8px rgba(108,99,255,0.04);
+    transition: transform 0.18s, box-shadow 0.18s, background 0.18s, color 0.18s;
+    cursor: default;
+    letter-spacing: 0.01em;
+    border: none;
+}
+
+.tools-list li:hover {
+    background: #eaeaff;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px #8ab4f822;
+    color: #6c63ff;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (для skills.css)        */
+/* ======================================= */
+
+@media (max-width: 992px) {
+    .hero, .skills-section {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    .skills-tabs-container {
+        gap: 15px;
+        padding: 8px;
+    }
+    .skills-tab {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    .skills-tab i[data-lucide] {
+        width: 20px;
+        height: 20px;
+    }
+    .skill-categories h3, .tools-category h3 {
+        font-size: 1.8rem;
+    }
+    .skill-item {
+        font-size: 1rem;
+    }
+    .tool-item {
+        font-size: 1rem;
+        padding: 15px;
+    }
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .tools-section, .pretty-bg {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .tools-category-card h3 {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero, .skills-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .skills-tabs-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .skills-tab {
+        justify-content: center;
+        width: 100%;
+    }
+    .skills-content {
+        padding: 30px;
+    }
+    .skill-categories h3, .tools-category h3 {
+        font-size: 1.5rem;
+    }
+    .skill-item {
+        font-size: 0.95rem;
+    }
+    .tool-item {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+    .tools-section, .pretty-bg {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .tools-category-card h3 {
+        font-size: 1rem;
+    }
+    .tools-category-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero, .skills-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    .skills-content {
+        padding: 20px;
+    }
+    .skill-categories h3, .tools-category h3 {
+        font-size: 1.3rem;
+    }
+    .skill-item {
+        font-size: 0.9rem;
+    }
+    .tool-item {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+    .tools-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    .tools-section, .pretty-bg {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .tools-category-card h3 {
+        font-size: 0.95rem;
+    }
+    .tools-category-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+}

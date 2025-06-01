@@ -157,12 +157,13 @@ body, html {
 
 /* Сетка карточек (Statistical Info Cards) */
 .cardGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
+  display: flex;
+  gap: 32px;
+  margin: 40px 0 40px 0;
+  justify-content: space-between;
 }
 .infoCard {
+  flex: 1;
   background: #ffffff;
   border-radius: 16px;
   padding: 25px;
@@ -174,6 +175,7 @@ body, html {
   justify-content: space-between;
   color: #191e27;
   border: none;
+  min-width: 0;
 }
 .infoCard:hover {
   transform: translateY(-5px);
@@ -230,6 +232,84 @@ body, html {
   color: #5cb85c;
 }
 
+@media (max-width: 900px) {
+  .burger-menu {
+    display: flex;
+  }
+  .sidebar {
+    display: none !important;
+  }
+  .sidebar.open {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 230px;
+    height: 100vh;
+    z-index: 1002;
+    flex-direction: column;
+    background: linear-gradient(180deg, #1e1a40, #0f0b2c);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.25);
+    transition: left 0.3s cubic-bezier(.4,0,.2,1);
+  }
+}
+
+@media (max-width: 768px) {
+  #mainContent {
+    margin-left: 0;
+    padding: 30px 20px;
+  }
+  .hero {
+    padding: 80px 20px;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  .infoCard .main-number {
+    font-size: 2.5rem;
+  }
+  .latest-projects-section {
+    padding: 30px 20px;
+  }
+  .projects-header-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  .view-all-projects-link {
+    font-size: 1rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-thumbnail {
+    height: 160px;
+  }
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+  .project-info p {
+    font-size: 0.85rem;
+  }
+  .project-link {
+    font-size: 0.85rem;
+  }
+  .project-link i[data-lucide] {
+    width: 16px;
+    height: 16px;
+  }
+}
 
 /* Skills Section Styles - СВЕТЛАЯ ТЕМА */
 .skills-section {
@@ -448,16 +528,49 @@ body, html {
 
 /* НОВАЯ СЕКЦИЯ КОНТАКТОВ В INDEX.HTML - СВЕТЛАЯ И МИНИМАЛИСТИЧНАЯ */
 .contact-section-index {
-  display: flex;
-  gap: 40px;
-  margin-top: 60px; /* Отступ от предыдущей секции */
-  padding: 40px 60px; /* Внутренние отступы */
-  background: #ffffff; /* Светлый фон для всей секции */
+  margin-top: 60px;
+  padding: 40px 60px;
+  background: #fff;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08); /* Мягкая тень */
-  color: #191e27; /* Темный текст по умолчанию для этой секции */
-  flex-wrap: wrap;
-  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  color: #191e27;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.contacts-title {
+  font-size: 2.5rem;
+  color: #1e1a40;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contacts-title i[data-lucide] {
+  width: 28px;
+  height: 28px;
+  color: #6c63ff;
+}
+.contacts-subtitle {
+  font-size: 1.15rem;
+  color: #4d4d66;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.go-to-contacts.button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.go-to-contacts.button i[data-lucide] {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
 }
 
 .contact-form-card-index {
@@ -615,116 +728,6 @@ body, html {
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
-  .sidebar {
-    display: none;
-  }
-  #mainContent {
-    margin-left: 0;
-    padding: 30px 20px;
-  }
-  .hero {
-    padding: 80px 20px;
-  }
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  .hero p {
-    font-size: 1rem;
-  }
-  .button {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-  .infoCard .main-number {
-    font-size: 2.5rem;
-  }
-  .latest-projects-section {
-    padding: 30px 20px;
-  }
-  .projects-header-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 15px;
-  }
-  .view-all-projects-link {
-    font-size: 1rem;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-  .project-thumbnail {
-    height: 160px;
-  }
-  .project-info h3 {
-    font-size: 1.1rem;
-  }
-  .project-info p {
-    font-size: 0.85rem;
-  }
-  .project-link {
-    font-size: 0.85rem;
-  }
-  .project-link i[data-lucide] {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* Responsive adjustments for skills section */
-  .skills-section {
-    padding: 30px 20px;
-  }
-  .skills-header-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
-  .skills-section .section-title {
-    margin-bottom: 15px;
-  }
-  .skill-categories h3 {
-    font-size: 1.3rem;
-  }
-  .skill-item span:first-child {
-    font-size: 0.9rem;
-  }
-  .skill-percentage {
-    font-size: 0.9rem;
-  }
-
-  /* Адаптивность для секции контактов в index.html */
-  .contact-section-index {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 30px 40px;
-  }
-  .contact-form-card-index,
-  .contact-info-cards-index {
-    min-width: unset;
-    width: 100%;
-    max-width: 600px;
-  }
-  .contact-section-index .form-title {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-  .submit-button-index {
-    font-size: 1rem;
-    padding: 12px 25px;
-  }
-  .info-card-index h3 {
-    font-size: 1.2rem;
-  }
-  .info-card-index p {
-    font-size: 0.9rem;
-  }
-}
-
 @media (max-width: 480px) {
   .hero h1 {
     font-size: 2rem;
@@ -762,4 +765,127 @@ body, html {
     width: 100%;
     justify-content: center;
   }
+}
+
+.site-footer {
+  width: 100%;
+  background: #fff;
+  color: #191e27;
+  padding: 38px 0 24px 0;
+  margin-top: 60px;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 -2px 24px #eaeaff44;
+  border-top: 1.5px solid #eaeaff;
+}
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.footer-contacts {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 8px;
+}
+.footer-contacts a {
+  color: #bcb4ff;
+  font-size: 1.5rem;
+  transition: color 0.18s, transform 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 7px;
+}
+.footer-contacts a:hover {
+  color: #6c63ff;
+  background: #f5f2ff;
+  transform: translateY(-2px) scale(1.12);
+}
+.footer-contacts i[data-lucide] {
+  width: 28px;
+  height: 28px;
+}
+.footer-copy {
+  font-size: 1rem;
+  color: #8c8ca1;
+  margin-top: 4px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 1001;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border: 1.5px solid #eaeaff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #eaeaff44;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  transition: box-shadow 0.2s;
+}
+.burger-menu span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background: #6c63ff;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+}
+.burger-menu.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger-menu.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(30,26,64,0.32);
+  z-index: 1000;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+.sidebar.open {
+  left: 0 !important;
+  box-shadow: 4px 0 24px #6c63ff22;
+  z-index: 1002;
+}
+.sidebar-overlay.active {
+  display: block;
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .burger-menu {
+    display: flex;
+  }
+  .sidebar {
+    left: -260px;
+    transition: left 0.3s cubic-bezier(.4,0,.2,1);
+  }
+  .sidebar.open {
+    left: 0;
+  }
+}
+
+#loadingScreen ~ .burger-menu,
+#loadingScreen ~ .sidebar-overlay {
+  display: none !important;
 }

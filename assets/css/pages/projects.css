@@ -90,143 +90,93 @@
 /* Сетка проектов */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 36px;
+    justify-content: center;
 }
 
 /* Общие стили для карточек проектов */
 .project-card {
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 4/5;
+    background: #fff;
+    border-radius: 22px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 24px rgba(108, 99, 255, 0.07);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer; /* Делаем карточку кликабельной */
-    display: flex; /* Важно для flex-direction: column; и height: 100%; */
+    margin: 0 auto;
+    transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+    display: flex;
     flex-direction: column;
-    height: 100%; /* Занимает всю высоту ячейки сетки */
-    color: #191e27; /* Общий цвет текста для карточек */
 }
 
 .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 40px rgba(108, 99, 255, 0.13);
+    border-color: #6c63ff;
+    transform: translateY(-6px) scale(1.02);
 }
 
-/* Стили для изображений проектов (включая баннеры) */
-.programming-card .project-thumbnail,
-.design-default-card .project-thumbnail,
-.design-banner-card .project-thumbnail {
+.project-thumbnail {
     width: 100%;
-    /* Для programming и default design */
-    height: 220px; /* Фиксированная высота превью */
-    object-fit: cover; /* Обрезает изображение, чтобы заполнить область */
-
-    /* НОВЫЕ СТИЛИ для эффекта Grayscale */
-    filter: grayscale(100%); /* Делаем изображение черно-белым */
-    transition: filter 0.5s ease-in-out; /* Плавный переход для фильтра */
+    height: 60%;
+    object-fit: cover;
+    display: block;
+    background: #f6f6fa;
+    transition: filter 0.3s;
+    filter: grayscale(8%);
 }
 
-/* Эффект при наведении на КАРТОЧКУ проекта */
 .project-card:hover .project-thumbnail {
-    filter: grayscale(0%); /* При наведении на карточку, изображение становится цветным */
+    filter: grayscale(0%);
 }
 
-
-/* Дизайн (Баннер) карточки - ТОЛЬКО ИЗОБРАЖЕНИЕ, без текста */
-.design-banner-card {
-    background: #100c29; /* Ещё более темный однотонный фон для баннеров */
-    padding: 0; /* Убираем паддинг */
-    border: none;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Центрируем изображение по вертикали */
-    align-items: center; /* Центрируем изображение по горизонтали */
-    min-height: 250px; /* Минимальная высота для баннеров, чтобы они не были слишком маленькими */
-}
-
-.design-banner-card .project-thumbnail {
-    /* Эти стили специфичны для баннеров, переопределяя общие height и object-fit, если нужно */
-    width: 100%;
-    height: 100%; /* Занимает всю высоту родителя (карточки) */
-    object-fit: contain; /* Сохраняет пропорции, помещая весь баннер внутри карточки */
-    border-bottom: none; /* Убираем нижнюю границу */
-}
-
-
-/* Монтаж карточки - с видеоплеером и текстом */
-.montage-card .video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9 / 16 * 100%) */
-    height: 0;
-    overflow: hidden;
-    background-color: #000;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.montage-card .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* Общие стили для информационного блока текста (для programming и default design, montage) */
+/* Блок с текстом и кнопкой — поверх изображения, внизу, с затемнением */
 .project-info {
-    padding: 25px;
-    flex-grow: 1; /* Позволяет блоку занимать оставшееся пространство */
+    width: 100%;
+    height: 40%;
+    padding: 28px 22px 20px 22px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background: #fff;
 }
 
 .project-info h3 {
-    font-size: 1.35rem;
-    color: #1e1a40;
-    margin-bottom: 12px;
-    font-weight: 600;
+    font-size: 1.22rem;
+    color: #6c63ff;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
 
 .project-info p {
-    font-size: 0.98rem;
+    font-size: 1.02rem;
     color: #4d4d66;
-    margin-bottom: 20px;
-    line-height: 1.6;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-/* Стиль для кнопки "Перейти на сайт" */
 .button-project {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 18px;
-    background-color: #6c63ff;
+    margin-top: 12px;
+    align-self: flex-start;
+    font-size: 1.05rem;
+    padding: 11px 28px;
+    border-radius: 14px;
+    background: linear-gradient(90deg, #6c63ff 0%, #8ab4f8 100%);
     color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
-    margin-top: auto; /* Прижимает кнопку к низу блока project-info */
-    align-self: flex-start; /* Выравнивает кнопку по левому краю */
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 2px 10px #6c63ff22;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .button-project:hover {
-    background-color: #8ab4f8;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(138, 180, 248, 0.4);
+    background: linear-gradient(90deg, #8ab4f8 0%, #6c63ff 100%);
+    box-shadow: 0 4px 18px #8ab4f855;
+    transform: translateY(-2px) scale(1.04);
 }
-
-.button-project i[data-lucide] {
-    width: 18px;
-    height: 18px;
-}
-
 
 /* Заглушка для отсутствующих проектов */
 .no-projects-placeholder {
@@ -394,4 +344,151 @@
     .no-projects-placeholder p {
         font-size: 1.2rem;
     }
+}
+
+@media (max-width: 450px) {
+    .project-card {
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        min-height: 300px;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-thumbnail, .design-banner-card .project-thumbnail {
+        height: 180px;
+        max-height: 180px;
+    }
+    .montage-card .video-container {
+        height: 180px;
+        min-height: 120px;
+    }
+    .project-info {
+        height: auto;
+        min-height: 90px;
+        padding: 15px;
+    }
+}
+
+/* --- Баннеры --- */
+.design-banner-card {
+  background: #fff;
+  border: 2px solid #191e27;
+  border-radius: 24px;
+  box-shadow: none;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4/5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.design-banner-card .project-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  position: static;
+}
+/* Убираем текст и кнопки на баннерах */
+.design-banner-card .project-info,
+.design-banner-card .button-project { display: none !important; }
+
+/* --- Обычные карточки --- */
+.project-card:not(.design-banner-card) {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 4/5;
+  background: #fff;
+  border-radius: 22px;
+  border: 2px solid #e0e0e0;
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.07);
+  overflow: hidden;
+  margin: 0 auto;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.project-card:not(.design-banner-card):hover {
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.13);
+  border-color: #6c63ff;
+  transform: translateY(-6px) scale(1.02);
+}
+.project-card:not(.design-banner-card) .project-thumbnail {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  display: block;
+  background: #f6f6fa;
+  transition: filter 0.3s;
+  filter: grayscale(8%);
+}
+.project-card:not(.design-banner-card):hover .project-thumbnail {
+  filter: grayscale(0%);
+}
+.project-card:not(.design-banner-card) .project-info {
+  width: 100%;
+  height: 40%;
+  padding: 28px 22px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: #fff;
+}
+.project-card:not(.design-banner-card) .project-info h3 {
+  font-size: 1.22rem;
+  color: #6c63ff;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.project-card:not(.design-banner-card) .project-info p {
+  font-size: 1.02rem;
+  color: #4d4d66;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.project-card:not(.design-banner-card) .button-project {
+  margin-top: 12px;
+  align-self: flex-start;
+  font-size: 1.05rem;
+  padding: 11px 28px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #6c63ff 0%, #8ab4f8 100%);
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 2px 10px #6c63ff22;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.project-card:not(.design-banner-card) .button-project:hover {
+  background: linear-gradient(90deg, #8ab4f8 0%, #6c63ff 100%);
+  box-shadow: 0 4px 18px #8ab4f855;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* --- Сетка --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 36px;
+  justify-content: center;
+}
+
+/* --- Адаптивность --- */
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; gap: 18px; }
+  .project-card, .design-banner-card { max-width: 100%; border-radius: 14px; }
 }
